@@ -52,20 +52,21 @@
 
         var message = form["message"].value;
         var thedate = new Date();
-
+        console.log("got here");
 
         analytics.identify(12345, {
-            name: Maggie
+            name: "Maggie",
+            email: "maggie.ychu@gmail.com"
         });
-        //send the message to Slack
+        //The message to Slack
         analytics.track('Message Sent', {
-            "properties": {
-                "message": message,
-                "date": thedate.getDate()
-            
+            message: message,
+            date: thedate.getDate()
+        }, function(data){
+            window.location.href = "";
+            console.log(data);
 
-
-        }});
+        });
 
 
       }
