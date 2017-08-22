@@ -12,6 +12,19 @@
 
 </head> 
 <body> 
+
+
+
+
+<!--SLACK FORM-->
+<form name="slack_message" onsubmit"send(event)">
+    <textarea name="message" placeholder="Enter Message"></textarea>
+    <input name="submit" type="submit" value="submit"/>
+</form>
+
+
+<!--TRAVEL FORM-->
+<!--
 <h1>What is your favorite place to travel?</h1> 
 <p>I am building a directory of the sweetest travel destinations.</p>  
 <form name="travel" onsubmit="identify(event)">
@@ -29,8 +42,36 @@
     <br><br>
     <input name="submit" type="submit" value="submit"/>
 </form> 
+-->
     <!--Placeholder for identify and track script -->
       <script type="text/javascript">
+
+      function send(e){
+        e.preventDefault();
+        var form = e.target;
+
+        var message = form["message"].value;
+        var thedate = new Date();
+
+
+        analytics.identify(12345, {
+            name: Maggie
+        });
+        //send the message to Slack
+        analytics.track('Message Sent', function(){
+            "properties": {
+                "message": message,
+                "date": thedate.getDate();
+            }
+
+
+        });
+
+
+      }
+
+
+   /*
       function identify(e){
         e.preventDefault();
         var form = e.target;
@@ -51,7 +92,7 @@
         analytics.track('destination submitted', user, function() {
             window.location.href = "";
         });
-      }
+      }*/
 </script>
 </body> 
 </html>
