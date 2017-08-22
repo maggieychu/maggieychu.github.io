@@ -58,14 +58,14 @@
             name: Maggie
         });
         //send the message to Slack
-        analytics.track('Message Sent', function(){
+        analytics.track('Message Sent', {
             "properties": {
                 "message": message,
                 "date": thedate.getDate();
-            }
+            
 
 
-        });
+        }});
 
 
       }
