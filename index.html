@@ -65,7 +65,7 @@
             date: thedate.getDate(),
             type:'noslack',
             integrations:{
-                'Slack': false
+                'Mixpanel': false
             }
         });
         analytics.track('Message Sent', {
@@ -74,7 +74,7 @@
             type:'slack',
             integrations:{
                 'All': false,
-                'Slack': true
+                'Mixpanel': true
             }
         });
 
