@@ -63,6 +63,7 @@
         analytics.track('Message Sent', {
             message: message,
             date: thedate.getDate(),
+            type:'noslack',
             integrations:{
                 'Slack': false
             }
@@ -70,6 +71,7 @@
         analytics.track('Message Sent', {
             message: message,
             date: thedate.getDate(),
+            type:'slack',
             integrations:{
                 'All': false,
                 'Slack': true
