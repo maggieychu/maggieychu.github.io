@@ -62,12 +62,20 @@
         //The message to Slack
         analytics.track('Message Sent', {
             message: message,
-            date: thedate.getDate()
-        }, function(data){
-            window.location.href = "";
-            console.log(data);
-
+            date: thedate.getDate(),
+            integrations:{
+                'Slack': false
+            }
         });
+        analytics.track('Message Sent', {
+            message: message,
+            date: thedate.getDate(),
+            integrations:{
+                'All': false,
+                'Slack': true
+            }
+        });
+
 
 
       }
