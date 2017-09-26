@@ -57,7 +57,12 @@
 
         analytics.identify(12345, {
             name: "Maggie",
-            email: "maggie.ychu@gmail.com"
+            email: "maggie.ychu@gmail.com",
+            integrations: {
+                All: true,
+                Slack: false
+
+            }
         });
         //The message to Slack
         analytics.track('Message Sent', {
