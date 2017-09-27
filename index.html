@@ -53,9 +53,6 @@
 -->
     <!--Placeholder for identify and track script -->
       <script type="text/javascript">
-            analytics.page('Viewed', {
-      search:''
-  });
 
       function send(e){
         alert("The form was submitted");
@@ -66,6 +63,7 @@
         var thedate = new Date();
         console.log("got here");
 
+/*
         analytics.identify('234234', {
             name: "Maggie",
             email: "maggie@segment.com",
@@ -76,11 +74,23 @@
             }
         });
         //The message to Slack
-        
+        */
+        analytics.reset();
+        analtyics.identify('987654', {
+            name: "teresa",
+            email: "teresa@segment.com",
+            integrations: {
+                All: true,
+                Vero: false
+
+            }
+        });
+
+analytics.reset();
         analytics.track('Message Sent', {
             message: message,
             date: thedate.getDate(),
-            type:'noslack'
+            userId: 'wer234ree'
         });/*
         analytics.track('Message Sent', {
             message: message,
