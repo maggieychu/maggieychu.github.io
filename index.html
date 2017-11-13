@@ -54,9 +54,14 @@
       search:'',
       dppActiveView: 1
     }
+                
 
   
     );
+    
+    analytics.track('Testing Active View', {
+      dppActiveView: 1
+    });
   }}();
 </script>
 
@@ -72,6 +77,10 @@
     <textarea name="message" placeholder="Enter Message"></textarea>
     <input name="submit" type="submit" value="submit"/>
 </form>
+<button onclick="sendTrack(event)">
+  
+
+</button>
 
 
 <!--TRAVEL FORM-->
